@@ -15,13 +15,12 @@ public class PlayerMovement : MonoBehaviour
     // Dash //
     private bool canDash = false;
     private float dashTime = 0.4f;
-    private float dashPower = 500f;
+    private float dashPower = 1500f;
     //private float dashCooldown = 0.75f;
     // Dash End //
 
     // Character //
-    [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private float jumpForce = 50f;
+    [SerializeField] private float movementSpeed = 20f;
     float moveDir = 1f;
     // Character End //
 
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Physics.gravity = new Vector3(0, -13f, 0);
+        Physics.gravity = new Vector3(0, -20f, 0);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -56,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+                rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
             } else if (doubleJump >= 1) {
                 doubleJump -= 1;
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+                rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
             }
             
         }
