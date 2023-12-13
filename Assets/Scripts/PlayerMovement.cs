@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
     // Dash //
     private bool dashUnlock = false;
     private bool canDash = false;
-    private float dashTime = 0.5f;
-    private float dashPower = 25f;
+    private float dashTime = 0.15f;
+    private float dashPower = 50f;
     //private float dashCooldown = 5f;
     // Dash End //
 
@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
         while(Time.time < startTime + dashTime)
         {
-            rb.velocity = new Vector3(moveDir * dashPower, rb.velocity.y, 0f);
+            rb.velocity = new Vector3(moveDir * dashPower, 0f, 0f);
 
             yield return null;
         }
