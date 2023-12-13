@@ -9,15 +9,21 @@ public class PlayerMovement : MonoBehaviour
 
     // Ground //
     private bool isGrounded = false;
-    public Vector3 boxSize;
+    public Vector3 boxSizeGround;
     public float maxDistance;
     public LayerMask layerMask;
     // Ground End //
 
+    // Wall //
+    private bool isOnWallLeft = false;
+    private bool isOnWallRight = false;
+    public Vector3 boxSizeWall;
+    // Wall End //
+
     // Double Jump //
     private int doubleJump = 0;
     private int maxJumpNumber = 0;
-    public float jumpForce = 20f;
+    public float jumpForce = 10f;
     private float jumpTimeCounter;
     public float jumpTime = 0.35f;
     private bool isJumping;
@@ -48,7 +54,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        isGrounded = Physics.BoxCast(transform.position, boxSize, -transform.up, transform.rotation, maxDistance, layerMask);
+        isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
+        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, 1 / 2, layerMask);
+        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right, transform.rotation, 1 / 2, layerMask);
+
 
         if (isGrounded) {
             doubleJump = maxJumpNumber;
@@ -106,8 +115,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color=Color.red;
-        Gizmos.DrawCube(transform.position-transform.up*maxDistance, boxSize);
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position - transform.up * maxDistance, boxSizeGround);
+        Gizmos.DrawCube(transform.position - transform.right * 1 / 2, boxSizeWall);
+        Gizmos.DrawCube(transform.position + transform.right * 1 / 2, boxSizeWall);
+
+
     }
 
 
