@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
     //private float dashCooldown = 5f;
     // Dash End //
 
+    // Gravity //
+    public Vector3 normalGravity = new Vector3(0, -42f, 0);
+    public Vector3 frictionGravity = new Vector3(0, -0f, 0);
+    
+     // Gravity //
+
+
     // Character //
     public float movementSpeed = 20f;
     float moveDir = 1f;
@@ -46,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Physics.gravity = new Vector3(0, -20f, 0);
+        Physics.gravity = normalGravity;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -55,8 +62,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
-        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, 1 / 2, layerMask);
-        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right, transform.rotation, 1 / 2, layerMask);
+        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right/2, transform.rotation, 1, layerMask);
+        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right/2, transform.rotation, 1, layerMask);
 
 
         if (isGrounded) {
@@ -68,6 +75,19 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+
+
+        // RALENTISSEMENT CONTRE UN MUR //
+        if ((isOnWallLeft || isOnWallRight) && rb.velocity.y < 0) 
+        {   
+            rb.velocity = new Vector3(rb.velocity.x, -2, rb.velocity.z);
+            Physics.gravity = frictionGravity;
+        } else {
+            Physics.gravity = normalGravity;
+        }
+        // RALENTISSEMENT CONTRE UN MUR //
+
+
 
         // DIRECTION END //
         if (horizontalInput > 0) {
@@ -114,8 +134,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
+    {   
+        if (isOnWallLeft || isOnWallRight) {
+            Gizmos.color = Color.green;
+        } else {
+            Gizmos.color = Color.red;
+        }
         Gizmos.DrawCube(transform.position - transform.up * maxDistance, boxSizeGround);
         Gizmos.DrawCube(transform.position - transform.right * 1 / 2, boxSizeWall);
         Gizmos.DrawCube(transform.position + transform.right * 1 / 2, boxSizeWall);
