@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,6 +287,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &708400511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae1768dd05f473849803b4527d3decb5, type: 3}
+  m_PrefabInstance: {fileID: 885236271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &885236271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,7 +451,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737eeb8a599126c4cbcd057b4d7ed585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  model: {fileID: 708400511}
+  boxSize: {x: 1, y: 0.5, z: 1}
+  maxDistance: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpForce: 10
+  jumpTime: 0.35
+  movementSpeed: 8
 --- !u!54 &902667965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -636,6 +649,10 @@ PrefabInstance:
       value: Floor (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
       propertyPath: m_TagString
       value: Floor
       objectReference: {fileID: 0}
@@ -787,6 +804,10 @@ PrefabInstance:
       value: Floor (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
       propertyPath: m_TagString
       value: Floor
       objectReference: {fileID: 0}
@@ -846,6 +867,10 @@ PrefabInstance:
     - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915422731470052362, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

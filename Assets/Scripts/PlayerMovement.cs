@@ -58,11 +58,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
-        if (horizontalInput > 0) {
-            if (canDash) { moveDir = -1; }
+        if (horizontalInput > 0 && canDash) {
+            moveDir = 1;
             model.transform.eulerAngles = new Vector3(0, 180, 0);
         } else if (horizontalInput < 0 && canDash) {
-            if (canDash) { moveDir = -1; }
+            moveDir = -1;
             model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
