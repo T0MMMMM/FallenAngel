@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Dash //
     private bool canDash = false;
     private float dashTime = 0.4f;
-    private float dashPower = 500f;
+    private float dashPower = 5000f;
     //private float dashCooldown = 0.75f;
     // Dash End //
 
@@ -58,18 +58,18 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
-        if (horizontalInput > 0 && canDash) {
-            moveDir = 1;
+        if (horizontalInput > 0) {
+            if (canDash) {moveDir = 1;}
             model.transform.eulerAngles = new Vector3(0, 180, 0);
-        } else if (horizontalInput < 0 && canDash) {
-            moveDir = -1;
+        } else if (horizontalInput < 0) {
+            if (canDash) {moveDir = 1;}
             model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
         // JUMP //
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || doubleJump >= 1 ))
         {
-            rb.velocity = Vector3.up * jumpForce;
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
             isJumping = true;
             jumpTimeCounter = jumpTime;
             doubleJump -= 1;
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector3.up * jumpForce;
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
                 jumpTimeCounter -= Time.deltaTime;
             } else {
                 isJumping = false;
