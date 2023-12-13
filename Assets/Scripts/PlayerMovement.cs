@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = false;
     private float dashTime = 0.5f;
     private float dashPower = 25f;
-    private float dashCooldown = 5f;
+    //private float dashCooldown = 5f;
     // Dash End //
 
     // Character //
