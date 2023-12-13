@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
     // Double Jump End //
 
     // Dash //
+    private bool dashUnlock = false;
     private bool canDash = false;
-    private float dashTime = 0.4f;
-    private float dashPower = 5000f;
-    //private float dashCooldown = 0.75f;
+    private float dashTime = 0.5f;
+    private float dashPower = 25f;
+    private float dashCooldown = 5f;
     // Dash End //
 
     // Character //
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded) {
             doubleJump = maxJumpNumber;
+            if ( dashUnlock ) {canDash = true;}
         }
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -58,13 +60,15 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
+        // DIRECTION END //
         if (horizontalInput > 0) {
             if (canDash) {moveDir = 1;}
             model.transform.eulerAngles = new Vector3(0, 180, 0);
         } else if (horizontalInput < 0) {
-            if (canDash) {moveDir = 1;}
+            if (canDash) {moveDir = -1;}
             model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
+        // DIRECTION END //
 
         // JUMP //
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || doubleJump >= 1 ))
@@ -113,11 +117,11 @@ public class PlayerMovement : MonoBehaviour
 
         while(Time.time < startTime + dashTime)
         {
-            rb.velocity = new Vector3(moveDir * dashPower * Time.deltaTime, rb.velocity.y, 0f);
+            rb.velocity = new Vector3(moveDir * dashPower, rb.velocity.y, 0f);
 
             yield return null;
         }
-        canDash = true;
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -129,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.name == "Dash Power")
         {
-            canDash = true;
+            dashUnlock = true;
             Destroy(other.gameObject);
         }
     }
