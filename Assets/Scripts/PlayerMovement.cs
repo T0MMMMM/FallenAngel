@@ -15,9 +15,12 @@ public class PlayerMovement : MonoBehaviour
     // Ground End //
 
     // Wall //
+    private bool isOnWall = false;
     private bool isOnWallLeft = false;
     private bool isOnWallRight = false;
+    // pas encore fait ///// private bool sameWallDirection = false;
     public Vector3 boxSizeWall;
+    public float spacing;
     // Wall End //
 
     // Double Jump //
@@ -62,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
-        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right/2, transform.rotation, 1, layerMask);
-        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right/2, transform.rotation, 1, layerMask);
+        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, spacing, layerMask);
+        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right, transform.rotation, spacing, layerMask);
 
 
         if (isGrounded) {
@@ -77,8 +80,19 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
 
+        // *** WALLS *** //
+
+        // CONTRE UN MUR //
+        if (isOnWallLeft || isOnWallRight) {
+            isOnWall = true;
+        } else {
+            isOnWall = false;
+        }
+        // CONTRE UN MUR //
+
+
         // RALENTISSEMENT CONTRE UN MUR //
-        if ((isOnWallLeft || isOnWallRight) && rb.velocity.y < 0) 
+        if (isOnWall && rb.velocity.y < 1) 
         {   
             rb.velocity = new Vector3(rb.velocity.x, -2, rb.velocity.z);
             Physics.gravity = frictionGravity;
@@ -86,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
             Physics.gravity = normalGravity;
         }
         // RALENTISSEMENT CONTRE UN MUR //
+
+
+        // *** WALLS *** //
+
+
 
 
 
@@ -99,15 +118,23 @@ public class PlayerMovement : MonoBehaviour
         }
         // DIRECTION END //
 
-        // JUMP //
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || doubleJump >= 1 ))
+
+
+
+        // *** JUMP *** //
+
+
+        // SIMPLE/DOUBLE JUMP //
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || (doubleJump >= 1 && !isOnWall)))
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
             isJumping = true;
             jumpTimeCounter = jumpTime;
             doubleJump -= 1;
         }
+        // SIMPLE/DOUBLE JUMP //
 
+        // LONG JUMP //
         if (Input.GetKey(KeyCode.Space) && isJumping)
         {
             if (jumpTimeCounter > 0)
@@ -118,11 +145,30 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
             }
         }
+        // LONG JUMP //
+
+
+        // WALL JUMP //
+
+
+
+
+
+
+        // WALL JUMP //
+
+
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
         }
-        // JUMP END //
+
+        // *** JUMP *** //
+
+
+
+
 
         // DASH //
         if (canDash && Input.GetButtonDown("Dash"))
@@ -135,14 +181,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDrawGizmos()
     {   
-        if (isOnWallLeft || isOnWallRight) {
+        if (isOnWall) {
             Gizmos.color = Color.green;
         } else {
             Gizmos.color = Color.red;
         }
         Gizmos.DrawCube(transform.position - transform.up * maxDistance, boxSizeGround);
-        Gizmos.DrawCube(transform.position - transform.right * 1 / 2, boxSizeWall);
-        Gizmos.DrawCube(transform.position + transform.right * 1 / 2, boxSizeWall);
+        Gizmos.DrawCube(transform.position - transform.right * spacing, boxSizeWall);
+        Gizmos.DrawCube(transform.position + transform.right * spacing, boxSizeWall);
 
 
     }
