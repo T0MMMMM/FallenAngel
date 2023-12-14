@@ -34,9 +34,10 @@ public class PlayerMovement : MonoBehaviour
 
     // Dash //
     private bool dashUnlock = false;
-    private bool canDash = false;
+    private bool canDash = true;
     private float dashTime = 0.15f;
     private float dashPower = 50f;
+    private float dashDir = 1f;
     //private float dashCooldown = 5f;
     // Dash End //
 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Character //
     public float movementSpeed = 20f;
-    float moveDir = 1f;
+    private float direction = 1;
     // Character End //
 
     // Start is called before the first frame update
@@ -83,11 +84,7 @@ public class PlayerMovement : MonoBehaviour
         // *** WALLS *** //
 
         // CONTRE UN MUR //
-        if (isOnWallLeft || isOnWallRight) {
-            isOnWall = true;
-        } else {
-            isOnWall = false;
-        }
+        isOnWall = isOnWallLeft || isOnWallRight;
         // CONTRE UN MUR //
 
 
@@ -103,20 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         // *** WALLS *** //
-
-
-
-
-
-        // DIRECTION END //
-        if (horizontalInput > 0) {
-            if (canDash) {moveDir = 1;}
-            model.transform.eulerAngles = new Vector3(0, 180, 0);
-        } else if (horizontalInput < 0) {
-            if (canDash) {moveDir = -1;}
-            model.transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        // DIRECTION END //
 
 
 
@@ -150,13 +133,13 @@ public class PlayerMovement : MonoBehaviour
 
         // WALL JUMP //
 
-
-
-
-
+        if (isOnWall && !isGrounded && Input.GetKeyDown(KeyCode.Space)) {
+            rb.velocity = new Vector3(10 * -direction, jumpForce, 0f);
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+        }
 
         // WALL JUMP //
-
 
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -176,6 +159,21 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
         // DASH END //
+
+
+
+
+        // DIRECTION //
+        if (rb.velocity.x > 0) {
+            direction = 1;
+            if (canDash) {dashDir = 1;}
+            model.transform.eulerAngles = new Vector3(0, 180, 0);
+        } else if (rb.velocity.x < 0) {
+            direction = -1;
+            if (canDash) {dashDir = -1;}
+            model.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        // DIRECTION END //
 
     }
 
@@ -200,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
 
         while(Time.time < startTime + dashTime)
         {
-            rb.velocity = new Vector3(moveDir * dashPower, 0f, 0f);
+            rb.velocity = new Vector3(dashDir * dashPower, 0f, 0f);
 
             yield return null;
         }
