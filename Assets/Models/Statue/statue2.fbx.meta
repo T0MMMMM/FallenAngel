@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0fdc70acd3e328546944b38776db9991
+guid: 4654bda7dae176cfea1ebc2874b3e3e1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: standardSurface1_Base_color
-    second: {fileID: 2800000, guid: 46ef200725ae84346a2b1b0c7727f092, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: standardSurface1_Metallic
-    second: {fileID: 2800000, guid: 1f17cbffc8c00754c82d52f5e052d931, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: standardSurface1_Normal
-    second: {fileID: 2800000, guid: 378f735993b0b214184da3db3616bc51, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: standardSurface1_Roughness
-    second: {fileID: 2800000, guid: 26a87699273b6364d8d37daf3e40aa27, type: 3}
+      name: statue_standardSurface1_BaseMap
+    second: {fileID: 2800000, guid: 92d65237d6d73029fb3b64dea2b8d3f0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

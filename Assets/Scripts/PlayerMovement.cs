@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Dash //
     private bool dashUnlock = false;
-    private bool canDash = true;
+    private bool canDash = false;
     private float dashTime = 0.15f;
     private float dashPower = 50f;
     private float dashDir = 1f;
@@ -53,17 +53,25 @@ public class PlayerMovement : MonoBehaviour
     private float direction = 1;
     // Character End //
 
+    public GameObject PausedPanel;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Physics.gravity = normalGravity;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        //////////////////////////////////////////
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            PausedPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        //////////////////////////////////////////
 
         isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
         isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, spacing, layerMask);
