@@ -147,6 +147,9 @@ public class PlayerMovement : MonoBehaviour
         // LONG JUMP //
 
         // WALL JUMP //
+        if (isGrounded) {
+            wallJumpingCounter = 0;
+        }
 
         if (isOnWall && !isGrounded) {
             isWallJumping = false;
@@ -154,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
             CancelInvoke(nameof(StopWallJumping));
         } else if (isGrounded) {
             isWallJumping = false;
+            wallJumpingCounter = 0;
         } else {
             wallJumpingCounter -= Time.deltaTime;
         }
@@ -163,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
                 direction = -direction;
             }
             isWallJumping = true;
-            wallJumpingCounter = 0;
             rb.velocity = new Vector3(direction * wallJumpingPower.x, wallJumpingPower.y, 0);
             wallJumpingCounter = 0f;
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
