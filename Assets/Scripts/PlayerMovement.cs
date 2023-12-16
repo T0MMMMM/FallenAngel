@@ -59,14 +59,17 @@ public class PlayerMovement : MonoBehaviour
     // Character //
     public float movementSpeed = 20f;
     private float direction = 1;
+    private bool canSave = false;
     // Character End //
 
+    public GameObject savingText;
     public GameObject PausedPanel;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.position = new Vector3(SaveManager.instance.position_x, SaveManager.instance.position_y, 0);
         Physics.gravity = normalGravity;
     }
 
@@ -208,6 +211,11 @@ public class PlayerMovement : MonoBehaviour
         }
         // DIRECTION END //
 
+        if (canSave)
+        {
+            Save();
+        }
+
     }
     void StopWallJumping() {
         isWallJumping = false;
@@ -252,6 +260,31 @@ public class PlayerMovement : MonoBehaviour
         {
             dashUnlock = true;
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Respawn"))
+        {
+            canSave = true;
+            savingText.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider other) 
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            canSave = false;
+            savingText.SetActive(false);
+        }
+    }
+
+    private void Save() {
+
+        SaveManager.instance.position_x = rb.position.x;
+        SaveManager.instance.position_y = rb.position.y;
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            SaveManager.instance.Save();
+            canSave = false;
         }
     }
 
