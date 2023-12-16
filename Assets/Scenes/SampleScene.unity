@@ -1449,6 +1449,7 @@ MonoBehaviour:
   jumpTime: 0.35
   normalGravity: {x: 0, y: -42, z: 0}
   movementSpeed: 8
+  isPaused: 0
   savingText: {fileID: 825743215}
   PausedPanel: {fileID: 1604750999}
 --- !u!54 &902667965
@@ -2596,6 +2597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausedPanel: {fileID: 1604750999}
+  playerObj: {fileID: 902667959}
 --- !u!114 &1604751002
 MonoBehaviour:
   m_ObjectHideFlags: 0

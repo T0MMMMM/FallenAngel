@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 20f;
     private float direction = 1;
     private bool canSave = false;
+    public bool isPaused = false;
     // Character End //
 
     public GameObject savingText;
@@ -76,9 +77,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPaused)
+        {
+            return;
+        }
         
         //////////////////////////////////////////
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) {
+            isPaused = true;
             PausedPanel.SetActive(true);
             Time.timeScale = 0;
         }
