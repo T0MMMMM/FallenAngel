@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
 
 
-        if (!isWallJumping) {
+        if (!isWallJumping || horizontalInput != 0) {
             rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
         }
 
@@ -161,8 +161,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (isOnWall && !isGrounded) {
-            isWallJumping = false;
             wallJumpingCounter = wallJumpingTime;
+            wallJumpingCounter = 0;
             CancelInvoke(nameof(StopWallJumping));
         } else if (isGrounded) {
             isWallJumping = false;
@@ -172,8 +172,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && wallJumpingCounter > 0f) {
-            if ((isOnWallLeft && direction == -1) || (isOnWallRight && direction == 1)) {
+            if (isOnWallLeft && direction == -1) {
                 direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 180, 0);
+            } else if (isOnWallRight && direction == 1) {
+                direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 0, 0);
             }
             isWallJumping = true;
             rb.velocity = new Vector3(direction * wallJumpingPower.x, wallJumpingPower.y, 0);
@@ -206,11 +210,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         // DIRECTION //
-        if (rb.velocity.x > 0) {
+        if (horizontalInput > 0) {
             direction = 1;
             if (canDash) {dashDir = 1;}
             model.transform.eulerAngles = new Vector3(0, 180, 0);
-        } else if (rb.velocity.x < 0) {
+        } else if (horizontalInput < 0) {
             direction = -1;
             if (canDash) {dashDir = -1;}
             model.transform.eulerAngles = new Vector3(0, 0, 0);
@@ -235,8 +239,8 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.color = Color.red;
         }
         Gizmos.DrawCube(transform.position - transform.up * maxDistance, boxSizeGround);
-        Gizmos.DrawCube(transform.position - transform.right * spacing, boxSizeWall);
-        Gizmos.DrawCube(transform.position + transform.right * spacing, boxSizeWall);
+        Gizmos.DrawCube(transform.position - transform.right * spacing, boxSizeWall*2);
+        Gizmos.DrawCube(transform.position + transform.right * spacing, boxSizeWall*2);
 
 
     }
