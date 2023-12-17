@@ -82,144 +82,20 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         
-        //////////////////////////////////////////
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) {
             isPaused = true;
             PausedPanel.SetActive(true);
             Time.timeScale = 0;
         }
-        //////////////////////////////////////////
 
-        isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
-        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, spacing, layerMask);
-        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right, transform.rotation, spacing, layerMask);
+        Movement();
+        CollisionWall();
+        JumpSimple();
+        JumpLong();
+        JumpWall();
+        DashUnlock();
+  
 
-
-        if (isGrounded) {
-            doubleJump = maxJumpNumber;
-            if ( dashUnlock ) {canDash = true;}
-        }
-
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
-
-        if (!isWallJumping || horizontalInput != 0) {
-            rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
-        }
-
-
-        // *** WALLS *** //
-
-        // CONTRE UN MUR //
-        isOnWall = isOnWallLeft || isOnWallRight;
-        // CONTRE UN MUR //
-
-
-        // RALENTISSEMENT CONTRE UN MUR //
-        if (isOnWall && rb.velocity.y < 0) 
-        {   
-            rb.velocity = new Vector3(rb.velocity.x, -3, rb.velocity.z);
-        }
-        // RALENTISSEMENT CONTRE UN MUR //
-
-
-        // *** WALLS *** //
-
-
-
-
-        // *** JUMP *** //
-
-
-        // SIMPLE/DOUBLE JUMP //
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || (doubleJump >= 1 && !isOnWall)))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            doubleJump -= 1;
-        }
-        // SIMPLE/DOUBLE JUMP //
-
-        // LONG JUMP //
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
-                jumpTimeCounter -= Time.deltaTime;
-            } else {
-                isJumping = false;
-            }
-        }
-        // LONG JUMP //
-
-        // WALL JUMP //
-        if (isGrounded) {
-            wallJumpingCounter = 0;
-        }
-
-        if (isOnWall && !isGrounded) {
-            wallJumpingCounter = wallJumpingTime;
-            wallJumpingCounter = 0;
-            CancelInvoke(nameof(StopWallJumping));
-        } else if (isGrounded) {
-            isWallJumping = false;
-            wallJumpingCounter = 0;
-        } else {
-            wallJumpingCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && wallJumpingCounter > 0f) {
-            if (isOnWallLeft && direction == -1) {
-                direction = -direction;
-                model.transform.eulerAngles = new Vector3(0, 180, 0);
-            } else if (isOnWallRight && direction == 1) {
-                direction = -direction;
-                model.transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            isWallJumping = true;
-            rb.velocity = new Vector3(direction * wallJumpingPower.x, wallJumpingPower.y, 0);
-            wallJumpingCounter = 0f;
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
-        }
-
-        // WALL JUMP END //
-
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
-
-        // *** JUMP *** //
-
-
-
-
-
-        // DASH //
-        if (canDash && Input.GetButtonDown("Dash"))
-        {
-            StartCoroutine(Dash());
-        }
-        // DASH END //
-
-
-
-
-        // DIRECTION //
-        if (horizontalInput > 0) {
-            direction = 1;
-            if (canDash) {dashDir = 1;}
-            model.transform.eulerAngles = new Vector3(0, 180, 0);
-        } else if (horizontalInput < 0) {
-            direction = -1;
-            if (canDash) {dashDir = -1;}
-            model.transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        // DIRECTION END //
 
         if (canSave)
         {
@@ -297,5 +173,101 @@ public class PlayerMovement : MonoBehaviour
             canSave = false;
         }
     }
+    void Movement() {
+        // MOUVEMENTS //
+        if (isGrounded) {
+            doubleJump = maxJumpNumber;
+            if ( dashUnlock ) {canDash = true;}
+        }
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (!isWallJumping || horizontalInput != 0) {
+            rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+        }
+        // DIRECTION //
+        if (horizontalInput > 0) {
+            direction = 1;
+            if (canDash) {dashDir = 1;}
+            model.transform.eulerAngles = new Vector3(0, 180, 0);
+        } else if (horizontalInput < 0) {
+            direction = -1;
+            if (canDash) {dashDir = -1;}
+                model.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+    }
+    
+    void CollisionWall() {
+        isGrounded = Physics.BoxCast(transform.position, boxSizeGround, -transform.up, transform.rotation, maxDistance, layerMask);
+        isOnWallLeft = Physics.BoxCast(transform.position, boxSizeWall, -transform.right, transform.rotation, spacing, layerMask);
+        isOnWallRight = Physics.BoxCast(transform.position, boxSizeWall, transform.right, transform.rotation, spacing, layerMask);
+        isOnWall = isOnWallLeft || isOnWallRight;
+        if (isOnWall && rb.velocity.y < 0) 
+        {   
+            rb.velocity = new Vector3(rb.velocity.x, -3, rb.velocity.z);
+        }
+    }
 
+
+    void JumpSimple() {
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || (doubleJump >= 1 && !isOnWall)))
+            {
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                doubleJump -= 1;
+            }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isJumping = false;
+            }
+
+    }
+
+    void JumpLong() {
+        if (Input.GetKey(KeyCode.Space) && isJumping) {
+            if (jumpTimeCounter > 0)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);
+                jumpTimeCounter -= Time.deltaTime;
+            } else {
+                isJumping = false;
+            }
+        }
+    }
+
+    void JumpWall() {
+        if (isGrounded) {
+                wallJumpingCounter = 0;
+            }
+        if (isOnWall && !isGrounded) {
+            wallJumpingCounter = wallJumpingTime;
+            CancelInvoke(nameof(StopWallJumping));
+        } else if (isGrounded) {
+            isWallJumping = false;
+            wallJumpingCounter = 0;
+        } else {
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && wallJumpingCounter > 0f) {
+            if (isOnWallLeft && direction == -1) {
+                direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 180, 0);
+            } else if (isOnWallRight && direction == 1) {
+                direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            isWallJumping = true;
+            rb.velocity = new Vector3(direction * wallJumpingPower.x, wallJumpingPower.y, 0);
+            wallJumpingCounter = 0f;
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    void DashUnlock() {
+        if (canDash && Input.GetButtonDown("Dash")) {
+            StartCoroutine(Dash());
+        }
+    }
 }
