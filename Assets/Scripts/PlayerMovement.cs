@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     // Character //
     public float movementSpeed = 20f;
     public float direction = 1;
-    private bool canSave = false;
+    public bool canSave = false;
     public bool isPaused = false;
     // Character End //
 

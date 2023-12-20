@@ -164,6 +164,7 @@ Transform:
   - {fileID: 2103549156}
   - {fileID: 1033692274}
   - {fileID: 1158920471}
+  - {fileID: 735205300}
   m_Father: {fileID: 211120633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &69266278
@@ -2197,6 +2198,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae1768dd05f473849803b4527d3decb5, type: 3}
   m_PrefabInstance: {fileID: 885236271}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &735205300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
+  m_PrefabInstance: {fileID: 5238109428610452586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &752424441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 668997783477087285, guid: 89ffbdfab32f1ec4dbe3e246c0f6c8e5, type: 3}
@@ -2417,6 +2423,7 @@ MonoBehaviour:
   normalGravity: {x: 0, y: -42, z: 0}
   movementSpeed: 8
   direction: 1
+  canSave: 0
   isPaused: 0
   savingText: {fileID: 825743215}
   PausedPanel: {fileID: 1604750999}
@@ -3920,6 +3927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SavingZone
       objectReference: {fileID: 0}
+    - target: {fileID: 6032198286617454927, guid: 71328404568cb74429c9af9e6aac8122, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 902667959}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4648,7 +4659,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 44323361}
     m_Modifications:
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4656,7 +4667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -30.4
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4668,15 +4679,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 586407120663206745, guid: 8b854ef324d39ca43b21242da98ce1ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4751,6 +4762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SavingZone
       objectReference: {fileID: 0}
+    - target: {fileID: 6032198286617454927, guid: 71328404568cb74429c9af9e6aac8122, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 902667959}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4770,4 +4785,3 @@ SceneRoots:
   - {fileID: 1754091863}
   - {fileID: 2001587259}
   - {fileID: 402398218}
-  - {fileID: 5238109428610452586}
