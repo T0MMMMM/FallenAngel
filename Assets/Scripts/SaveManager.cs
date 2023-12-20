@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
     // what we wanna save
     public float position_x;
     public float position_y;
+    public string currentLevel;
     
     private void Awake() {
         if (instance != this && instance != null) {
@@ -32,6 +33,7 @@ public class SaveManager : MonoBehaviour
 
             position_x = data.position_x;
             position_y = data.position_y;
+            currentLevel = data.currentLevel;
 
             file.Close();
         }
@@ -44,6 +46,7 @@ public class SaveManager : MonoBehaviour
 
         data.position_x = position_x;
         data.position_y = position_y;
+        data.currentLevel = currentLevel;
 
         bf.Serialize(file, data);
         file.Close();
@@ -56,4 +59,6 @@ public class PlayerData_Storage
 {
     public float position_x;
     public float position_y;
+    public string currentLevel;
+
 }
