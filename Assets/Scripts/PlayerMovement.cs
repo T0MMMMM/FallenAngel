@@ -258,7 +258,7 @@ public class PlayerMovement : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
         }
     
-        if (Input.GetKeyDown(KeyCode.Space) && wallJumpingCounter > 0f) {
+        if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && !isJumping && wallJumpingCounter > 0f) {
             if (timeAfterJump > 0.11) {
                 isWallJumping = true;
             }
