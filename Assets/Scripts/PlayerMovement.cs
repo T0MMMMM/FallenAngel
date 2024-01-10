@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Wall jump //
     public float timeAfterJump;
     public bool isWallJumping;
+    public bool hasWallJumping;
     public bool isWallSliding;
     public float wallJumpingTime = 1f;
     public float wallJumpingCounter;
@@ -48,15 +49,17 @@ public class PlayerMovement : MonoBehaviour
     private int maxJumpNumber = 0;
     public float jumpForce = 10f;
     private float jumpTimeCounter;
-    public float jumpTime = 0.35f;
+    public float jumpTime = 0.1f;
     private bool isJumping;
     // Double Jump End //
 
     // Dash //
+    private bool dashing = false;
     private bool dashUnlock = false;
     private bool canDash = false;
-    private float dashTime = 0.15f;
-    private float dashPower = 50f;
+    private float dashTime = 0.2f;
+    private float dashPower = 30f;
+    public Vector2 dashDirection = new Vector2(0f, 0f);
 
     //private float dashCooldown = 5f;
     // Dash End //
@@ -68,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Character //
     public float movementSpeed = 20f;
-    public float direction = 1;
+    public float direction = 1f;
     public bool canSave = false;
     public bool isPaused = false;
     // Character End //
@@ -113,9 +116,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    void StopWallJumping() {
-        isWallJumping = false;
-    }
+    
 
     void OnDrawGizmos()
     {   
@@ -180,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         if ((!isWallJumping || horizontalInput != 0) && !blockMovement) {
-            rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+            rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, 0f);
             if ((horizontalInput < 0 || horizontalInput > 0) && isWallJumping) {
                 wallJumpingCounter = 0f;
                 //rb.velocity = (0f, rb.velocity.y, 0f);
@@ -188,6 +189,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         // DIRECTION //
+        
+
+
         if ((horizontalInput > 0 && !blockMovement)) {
             direction = 1;
             model.transform.eulerAngles = new Vector3(0, 180, 0);
@@ -195,6 +199,17 @@ public class PlayerMovement : MonoBehaviour
             direction = -1;
             model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
+        // DASH DIRECTION //
+        if (!dashing) {
+            if (horizontalInput == 0 && verticalInput == 0) {
+                dashDirection = new Vector2(direction, 0);
+            } else {
+                dashDirection = new Vector2(horizontalInput, verticalInput);
+            }
+        }
+        
+
     }
     
     void CollisionWall() {
@@ -237,7 +252,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void StopWallJumping() {
+        isWallJumping = false;
+    }
+
     void JumpWall() {
+        /**
+        if (isWallJumping) {timeAfterJump += Time.deltaTime;}
+
+        if (Input.GetKeyDown(KeyCode.Space) && isOnWall || (timeAfterJump < 0.4 && timeAfterJump != 0 && isWallJumping)) {
+                blockMovement = true;
+        } else {blockMovement = false;}
+
+        if (isOnWall) {timeAfterJump = 0;}
+
+        if (isGrounded) {
+            timeAfterJump = 0;
+            isWallJumping = false;}
+
+        if (Input.GetKeyDown(KeyCode.Space) && isOnWall && !isGrounded) { 
+            isWallJumping = true;
+            if (isOnWallLeft && direction == -1) {
+                direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 180, 0);
+            } else if (isOnWallRight && direction == 1) {
+                direction = -direction;
+                model.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            rb.velocity = new Vector3(direction * wallJumpingPower.x, wallJumpingPower.y, 0);
+        }
+        */
+        
+        
+
+        /**
         timeAfterJump += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && isOnWall || (timeAfterJump < 0.3 && timeAfterJump != 0 && isWallJumping)) {
                 blockMovement = true;
@@ -274,21 +322,27 @@ public class PlayerMovement : MonoBehaviour
             wallJumpingCounter = 0f;
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
         }
+        */
     }
 
     private IEnumerator Dash() {
+        dashing = true;
         canDash = false;
         float startTime = Time.time;
         wallJumpingCounter = 0f;
         isWallJumping = false;
         rb.velocity = new Vector3(0f, 0f, 0f);
-        timeAfterJump = 0;
+        timeAfterJump = 0;     
+
         while(Time.time < startTime + dashTime)
         {
-            rb.velocity = new Vector3(direction * dashPower, 0f, 0f);
+            rb.velocity = new Vector3(dashDirection.x * dashPower,  dashDirection.y * dashPower, 0f);
 
             yield return null;
         }
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y/2, 0f);
+        dashDirection = new Vector2(0f, 0f);
+        dashing = false; 
         
     }
 

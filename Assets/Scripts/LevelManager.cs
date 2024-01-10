@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
 
     public void ChangeLevel(string newLevel, Vector3 position, Vector3 velocity, UnityEngine.Rigidbody playerRb) 
     {
+
         currentLevel.SetActive(false);
         SaveManager.instance.currentLevel = newLevel;
         if (newLevel == "automne") {
