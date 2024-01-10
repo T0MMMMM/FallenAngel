@@ -161,16 +161,38 @@ public class PlayerMovement : MonoBehaviour
             savingText.SetActive(false);
         }
     }
+    
 
-    private void Save() {
-
+    float timer = 3;
+    private void Save()
+    {
+        /*
         SaveManager.instance.position_x = rb.position.x;
         SaveManager.instance.position_y = rb.position.y;
 
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Input.GetKeyDown(KeyCode.Q) && !implosion.isPlaying)
+        {
+            implosion.Play();
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            timer -= Time.deltaTime;
+        }
+        Debug.Log(timer);
+        if (timer < 0)
+        {
             SaveManager.instance.Save();
             canSave = false;
+            timer = 3;
+            implosion.Stop();
+            Debug.Log("grf");
         }
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            implosion.Stop();
+            timer = 3;
+        }*/
     }
     void Movement() {
         // MOUVEMENTS //
@@ -285,7 +307,7 @@ public class PlayerMovement : MonoBehaviour
         
         
 
-        /**
+        
         timeAfterJump += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && isOnWall || (timeAfterJump < 0.3 && timeAfterJump != 0 && isWallJumping)) {
                 blockMovement = true;
@@ -322,7 +344,7 @@ public class PlayerMovement : MonoBehaviour
             wallJumpingCounter = 0f;
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
         }
-        */
+        
     }
 
     private IEnumerator Dash() {
