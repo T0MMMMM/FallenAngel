@@ -60,6 +60,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\HueValue.cs" />
+    <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\PreviewHueSlider.cs" />
     <Compile Include="Assets\Scripts\PausedMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\CheckCollisionMysticCaves.cs" />
@@ -68,9 +70,12 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\InstanceCombiner.cs" />
     <Compile Include="Assets\Scripts\SaveManager.cs" />
+    <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\RedHollowControl.cs" />
     <Compile Include="Assets\Scripts\CameraMouvement.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\HueControl.cs" />
     <Compile Include="Assets\Scripts\SaveZone.cs" />
+    <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\CameraShake.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
