@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -73,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 20f;
     public float direction = 1f;
     public bool canSave = false;
+    //public ParticleSystem saveParticles;
+    [SerializeField] private Animator savingAnimation;
+    //[SerializeField] private Animator _anim;
     public bool isPaused = false;
     // Character End //
 
@@ -85,6 +89,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.position = new Vector3(SaveManager.instance.position_x, SaveManager.instance.position_y, 0);
         Physics.gravity = normalGravity;
+        savingAnimation = savingAnimation.GetComponent<Animator>();
+        Debug.Log(savingAnimation);
+        //saveParticles = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -162,37 +169,43 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    //timer
 
-    float timer = 3;
+    private float timer = 5;
+
+    //timer end
     private void Save()
     {
-        /*
+        
         SaveManager.instance.position_x = rb.position.x;
         SaveManager.instance.position_y = rb.position.y;
 
-        if (Input.GetKeyDown(KeyCode.Q) && !implosion.isPlaying)
+        
+
+        if (Input.GetKeyDown(KeyCode.Q) && !savingAnimation.GetBool("isSaving"))
         {
-            implosion.Play();
+            savingAnimation.SetBool("isSaving", true);
         }
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) || (timer < 2 && timer > 0))
         {
             timer -= Time.deltaTime;
         }
-        Debug.Log(timer);
-        if (timer < 0)
+        if (timer < 2)
         {
             SaveManager.instance.Save();
+        }
+        if (timer <= 0)
+        {
+            timer = 5;
             canSave = false;
-            timer = 3;
-            implosion.Stop();
-            Debug.Log("grf");
+            savingAnimation.SetBool("isSaving", false);
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q) && !(timer < 2))
         {
-            implosion.Stop();
-            timer = 3;
-        }*/
+            savingAnimation.SetBool("isSaving", false);
+            timer = 5;
+        }
     }
     void Movement() {
         // MOUVEMENTS //
