@@ -5,11 +5,11 @@ using UnityEngine;
 public class SaveZone : MonoBehaviour
 {
     public GameObject savingText;
-    public GameObject player;
+    public GameObject _player;
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player"))
         {
-            player.GetComponent<PlayerMovement>().canSave = true;
+            _player.GetComponent<PlayerManagerScript>()._data.canSave = true;
             savingText.SetActive(true);
         }
     }
@@ -17,7 +17,7 @@ public class SaveZone : MonoBehaviour
     void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player"))
         {
-            player.GetComponent<PlayerMovement>().canSave = false;
+            _player.GetComponent<PlayerManagerScript>()._data.canSave = false;
             savingText.SetActive(false);
         }
     }

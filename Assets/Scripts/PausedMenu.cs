@@ -6,25 +6,25 @@ public class PausedMenu : MonoBehaviour
 {
     public GameObject PausedPanel;
     public GameObject playerObj;
-    private PlayerMovement player;
+    private PlayerManagerScript _player;
 
     void Start()
     {
-        player = playerObj.GetComponent<PlayerMovement>();
+        _player = playerObj.GetComponent<PlayerManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            player.isPaused = false;
+            _player._data.isPaused = false;
             PausedPanel.SetActive(false);
             Time.timeScale = 1;
         }
     }
 
     public void Continue() {
-        player.isPaused = false;
+        _player._data.isPaused = false;
         PausedPanel.SetActive(false);
         Time.timeScale = 1;
     }
