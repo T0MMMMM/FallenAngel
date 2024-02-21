@@ -33,10 +33,15 @@ GraphicsSettings:
   - {fileID: 15106, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 4800000, guid: a965de1e9f6fda340bac24e3682208e6, type: 3}
+  - {fileID: 4800000, guid: 57496791df1fa184a854446cf404193b, type: 3}
+  - {fileID: 4800000, guid: b9c33ff5cc7118b45a20b23d19b4e6ec, type: 3}
+  - {fileID: 4800000, guid: 4ff0d8faf0a627143a701ec5a7bb8308, type: 3}
+  - {fileID: 4800000, guid: f168c6d760e389e4985f77960ecf4d90, type: 3}
   m_PreloadedShaders: []
   m_PreloadShadersBatchTimeLimit: -1
   m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_CustomRenderPipeline: {fileID: 11400000, guid: 2f3deb7f9f5c9484da4ba6b626878e8a, type: 2}
+  m_CustomRenderPipeline: {fileID: 11400000, guid: aefc8e50f44ed5d429f1d50aece008bd, type: 2}
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 0, z: 1}
   m_DefaultRenderingPath: 1
@@ -56,11 +61,12 @@ GraphicsSettings:
   m_FogKeepExp: 1
   m_FogKeepExp2: 1
   m_AlbedoSwatchInfos: []
-  m_LightsUseLinearIntensity: 0
+  m_LightsUseLinearIntensity: 1
   m_LightsUseColorTemperature: 1
-  m_DefaultRenderingLayerMask: 1
+  m_DefaultRenderingLayerMask: 257
   m_LogWhenShaderIsCompiled: 0
   m_SRPDefaultSettings:
+    UnityEngine.Rendering.HighDefinition.HDRenderPipeline: {fileID: 11400000, guid: 9f50f45bb98e8764a879e00fedebdd5f, type: 2}
     UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 3b94565f646378c458651b1c01128de7, type: 2}
   m_LightProbeOutsideHullStrategy: 0
   m_CameraRelativeLightCulling: 0

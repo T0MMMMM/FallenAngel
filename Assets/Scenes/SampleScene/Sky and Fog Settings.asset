@@ -162,10 +162,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 0
-    m_Value: 0.25
+    m_Value: 0.33
   m_ResolutionDepthRatio:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0.666
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
@@ -185,9 +185,6 @@ MonoBehaviour:
   - {fileID: 491385328448367522}
   - {fileID: 2799229319262537191}
   - {fileID: -4746432860584863393}
-  - {fileID: 5753634777920469900}
-  - {fileID: -7926106270666782400}
-  - {fileID: -5382107813963065486}
 --- !u!114 &491385328448367522
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -200,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   skyType:
     m_OverrideState: 1
     m_Value: 4
