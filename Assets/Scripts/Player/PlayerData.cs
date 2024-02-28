@@ -51,9 +51,12 @@ public class PlayerData : ScriptableObject
     [HideInInspector] public bool pressDash = false;
     [HideInInspector] public bool dashing = false;
     [HideInInspector] public bool dashUnlock = false;
-    [HideInInspector] public bool canDash = false;
+    [HideInInspector] public bool canDash = true;
+    [HideInInspector] public bool endDashColdown = true;
+
     public float dashTime = 0.2f;
-    public float dashPower = 30f;
+    public Vector2 dashPower = new Vector2(30f, 20f);
+    public float dashColdown = 2f;
     public Vector2 dashDirection = new Vector2(0f, 0f);
 
 

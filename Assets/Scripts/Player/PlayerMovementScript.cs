@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class PlayerMovementScript : MonoBehaviour
         handleJump();
 
         HandleDash();
+
 
         if (_player._data.canSave)
         {
@@ -69,7 +71,6 @@ public class PlayerMovementScript : MonoBehaviour
         if (_player._data.isGrounded)
         {
             _player._data.jumpNumber = _player._data.maxJumpNumber;
-            if (_player._data.dashUnlock) { _player._data.canDash = true; }
         }
 
 
@@ -237,30 +238,50 @@ public class PlayerMovementScript : MonoBehaviour
     private IEnumerator Dash()
     {
         _player._data.dashing = true;
-        _player._data.canDash = false;
         float startTime = Time.time;
         _player._data.wallJumpingCounter = 0f;
         _player._data.isWallJumping = false;
         _player._rb.velocity = new Vector3(0f, 0f, 0f);
         _player._data.timeAfterJump = 0;
 
-        while (Time.time < startTime + _player._data.dashTime)
+        while (Time.time < startTime + _player._data.dashTime && _player._data.canDash)
         {
-            _player._rb.velocity = new Vector3(_player._data.dashDirection.x * _player._data.dashPower, _player._data.dashDirection.y * _player._data.dashPower, 0f);
+            _player._rb.velocity = new Vector3(_player._data.dashDirection.x * _player._data.dashPower.x, _player._data.dashDirection.y * _player._data.dashPower.y, 0f);
 
             yield return null;
         }
         _player._rb.velocity = new Vector3(_player._rb.velocity.x, _player._rb.velocity.y / 2, 0f);
         _player._data.dashDirection = new Vector2(0f, 0f);
         _player._data.dashing = false;
+        _player._data.canDash = false;
+        StartCoroutine(DashColdown());
 
+    }
+
+    private IEnumerator DashColdown()
+    {
+        while (_player._data.dashColdown > 0)
+        {
+            _player._data.dashColdown -= Time.deltaTime;
+            yield return null;
+
+
+        }
+        _player._data.endDashColdown = true;
     }
 
     void HandleDash()
     {
-        if (_player._data.pressDash && _player._data.dashUnlock)
+        if (_player._data.pressDash  && _player._data.dashUnlock && _player._data.canDash)
         {
             StartCoroutine(Dash());
+        }
+        if (_player._data.endDashColdown && _player._data.isGrounded)
+        {
+            _player._data.canDash = true;
+            _player._data.dashColdown = 2f;
+            _player._data.endDashColdown = false;
+
         }
     }
 
