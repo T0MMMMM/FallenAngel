@@ -72,10 +72,12 @@
     <Compile Include="Assets\Resources\_Scripts\SetMaterialProperties.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManagerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovementScript.cs" />
+    <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\InstanceCombiner.cs" />
     <Compile Include="Assets\Scripts\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\RedHollowControl.cs" />
     <Compile Include="Assets\Scripts\CameraMouvement.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />

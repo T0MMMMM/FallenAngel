@@ -12,6 +12,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _player._sound.Play("Forest");
 
     }
 

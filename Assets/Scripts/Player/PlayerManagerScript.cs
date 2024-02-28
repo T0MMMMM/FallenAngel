@@ -20,6 +20,9 @@ public class PlayerManagerScript : MonoBehaviour
     [SerializeField]
     public PlayerData _data;
 
+    [SerializeField]
+    public AudioManager _sound;
+
 
     #region player
 
@@ -44,6 +47,7 @@ public class PlayerManagerScript : MonoBehaviour
         _data.maxJumpNumber = 0;
         _data.blockMovement = false;
         _data.jumpTimeCounter = 5f;
+
 
 }
 
