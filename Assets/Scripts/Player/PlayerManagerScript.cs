@@ -52,8 +52,8 @@ public class PlayerManagerScript : MonoBehaviour
         _data.isPaused = false;
         _data.canDash = true;
 
-        _data.currentHealth = SaveManager.instance.maxHealth;
-        _data.maxHealth = SaveManager.instance.maxHealth;
+        _data.currentHealth = 50; // SaveManager.instance.maxHealth;
+        _data.maxHealth = 50; //SaveManager.instance.maxHealth;
 
 
 
@@ -72,7 +72,7 @@ public class PlayerManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J)) 
         {
-            _data.currentHealth -= 1;
+            _data.currentHealth -= 10;
             transform.position = new Vector3(GameManager.instance.lastCheckPointPos.x, GameManager.instance.lastCheckPointPos.y, 0);
         }
     }

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1019D9D9-EB7A-8E1D-B5E1-085CB3914C98}</ProjectGuid>
+    <ProjectGuid>{5985FB8F-0672-CE16-D047-8B47BB57173F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Free\YSA VFX\Red Hollow\Scripts\RedHollowControl.cs" />
     <Compile Include="Assets\Scripts\CameraMouvement.cs" />
+    <Compile Include="Assets\Scripts\HUD\Health.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollisionScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
