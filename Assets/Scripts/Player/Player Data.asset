@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalGravity: {x: 0, y: -60, z: 0}
   isGrounded: 1
-  boxSizeGround: {x: 0.2, y: 0.1, z: 0.2}
+  boxSizeGround: {x: 0.4, y: 0.1, z: 0.4}
   maxDistance: 0.7
   layerMask:
     serializedVersion: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
   jumpNumber: 1
   maxJumpNumber: 1
   jumpForce: 15
-  jumpTimeCounter: -0.0003019143
+  jumpTimeCounter: 0.103615284
   jumpTime: 0.2
   isJumping: 0
   simpleJump: 0
@@ -48,8 +48,10 @@ MonoBehaviour:
   dashing: 0
   dashUnlock: 1
   canDash: 1
+  endDashColdown: 0
   dashTime: 0.2
-  dashPower: 30
+  dashPower: {x: 30, y: 20}
+  dashColdown: 2
   dashDirection: {x: 1, y: 0}
   model: {fileID: 0}
   movementSpeed: 10
@@ -58,6 +60,8 @@ MonoBehaviour:
   verticalInput: 0
   canSave: 0
   isPaused: 0
+  maxHealth: 0
+  currentHealth: 0
   savingText: {fileID: 0}
   pausedPanel: {fileID: 0}
   savingTimer: 5

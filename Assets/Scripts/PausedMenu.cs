@@ -6,7 +6,7 @@ public class PausedMenu : MonoBehaviour
 {
     public GameObject PausedPanel;
     public GameObject playerObj;
-    private PlayerManagerScript _player;
+    public PlayerManagerScript _player;
 
     void Start()
     {
@@ -18,8 +18,8 @@ public class PausedMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             _player._data.isPaused = false;
-            PausedPanel.SetActive(false);
             Time.timeScale = 1;
+            PausedPanel.SetActive(false);
         }
     }
 

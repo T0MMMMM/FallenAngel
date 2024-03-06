@@ -20,9 +20,11 @@ public class PlayerMovementScript : MonoBehaviour
     void Update()
     {
         if (_player._data.isPaused)
-        {
+        {   
             return;
         }
+ 
+
 
         CheckColliders();
 
@@ -206,6 +208,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         SaveManager.instance.position_x = _player._rb.position.x;
         SaveManager.instance.position_y = _player._rb.position.y;
+        SaveManager.instance.maxHealth = _player._data.maxHealth;
 
 
 
@@ -244,6 +247,8 @@ public class PlayerMovementScript : MonoBehaviour
         _player._data.isWallJumping = false;
         _player._rb.velocity = new Vector3(0f, 0f, 0f);
         _player._data.timeAfterJump = 0;
+        _player._sound.Play("Dash Cartoon");
+
 
         while (Time.time < startTime + _player._data.dashTime && _player._data.canDash)
         {

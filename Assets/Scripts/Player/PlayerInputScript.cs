@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class PlayerInputScript : MonoBehaviour
     public PlayerManagerScript _player;
 
     void Update()
-    {
+    {   
+        if (_player._data.isPaused) { return; }
         if (Input.GetKeyDown(KeyCode.Escape) && !_player._data.isPaused)
         {
             _player._data.isPaused = true;

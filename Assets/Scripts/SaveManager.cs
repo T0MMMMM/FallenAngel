@@ -12,7 +12,11 @@ public class SaveManager : MonoBehaviour
     public float position_x;
     public float position_y;
     public string currentLevel;
-    
+    public float maxHealth;
+
+
+
+
     private void Awake() {
         if (instance != this && instance != null) {
             Destroy(gameObject);
@@ -31,9 +35,11 @@ public class SaveManager : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/PlayerData.dat", FileMode.Open);
             PlayerData_Storage data = (PlayerData_Storage)bf.Deserialize(file);
 
+
             position_x = data.position_x;
             position_y = data.position_y;
             currentLevel = data.currentLevel;
+            maxHealth = data.maxHealth;
 
             file.Close();
         }
@@ -47,6 +53,7 @@ public class SaveManager : MonoBehaviour
         data.position_x = position_x;
         data.position_y = position_y;
         data.currentLevel = currentLevel;
+        data.maxHealth = maxHealth;
 
         bf.Serialize(file, data);
         file.Close();
@@ -60,5 +67,6 @@ public class PlayerData_Storage
     public float position_x;
     public float position_y;
     public string currentLevel;
+    public float maxHealth;
 
 }

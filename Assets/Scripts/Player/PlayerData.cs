@@ -69,6 +69,11 @@ public class PlayerData : ScriptableObject
     [HideInInspector] public bool canSave = false;
     [HideInInspector] public bool isPaused = false;
 
+    [Header("Player")]
+    public float maxHealth = 50f;
+    public float currentHealth = 50f;
+
+
 
 
 

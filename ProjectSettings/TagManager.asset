@@ -8,6 +8,8 @@ TagManager:
   - model
   - savingAnimation
   - savingText
+  - GM
+  - pausedMenu
   layers:
   - Default
   - TransparentFX
