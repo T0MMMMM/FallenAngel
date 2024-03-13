@@ -9,8 +9,9 @@ public class CameraMouvement : MonoBehaviour
     private Vector3 offset;
 
     void FixedUpdate() {
-        Vector3 desiredPosition = target.position + offset;
+        Vector3 desiredPosition = target.position + offset ;
         desiredPosition.z = transform.position.z;
+        desiredPosition.y += 2;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
 
