@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManagerScript : MonoBehaviour
 {
+
+    public static PlayerManagerScript instance { get; private set; }
+
     private string currentState;
 
 
@@ -17,6 +20,11 @@ public class PlayerManagerScript : MonoBehaviour
 
     [SerializeField]
     public PlayerCollisionScript _collisionScript;
+
+    [SerializeField]
+    public RespawnLastCP _respawnLastCP;
+
+
 
     [SerializeField]
     public PlayerData _data;
@@ -35,6 +43,23 @@ public class PlayerManagerScript : MonoBehaviour
 
     void Awake()
     {
+        if (instance != this && instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+        _inputScript.enabled = false;
+        _movementScript.enabled = false;
+        _collisionScript.enabled = false;
+        _respawnLastCP.enabled = false;
+
+
         _rb = GetComponent<Rigidbody>();
         _rb.position = new Vector3(SaveManager.instance.position_x, SaveManager.instance.position_y, 0);
         Physics.gravity = _data.normalGravity;
@@ -55,6 +80,7 @@ public class PlayerManagerScript : MonoBehaviour
         _data.currentHealth = 50; // SaveManager.instance.maxHealth;
         _data.maxHealth = 50; //SaveManager.instance.maxHealth;
 
+        ChangeState("playing");
 
 
     }
@@ -63,17 +89,61 @@ public class PlayerManagerScript : MonoBehaviour
     {
         if (newState != currentState)
         {
+            switch (currentState)
+            {
+                case "playing":
+                    _inputScript.enabled = false;
+                    _movementScript.enabled = false;
+                    _collisionScript.enabled = false;
+                    break;
+                case "respawnLastCP":
+                    _respawnLastCP.enabled = false;
+                    break;
+                default:
+                    break;
+
+            }
             // Change Animation
             currentState = newState;
+
+            switch (currentState)
+            {
+                case "playing":
+                    break;
+                case "respawnLastCP":
+                    _respawnLastCP.enterScript();
+                    break;
+                default:
+                    break;
+
+            }
+
         }
     }
 
     void Update()
     {
+        switch (currentState)
+        {
+            case "playing":
+                _inputScript.enabled = true;
+                _movementScript.enabled = true;
+                _collisionScript.enabled = true;
+                break;
+            case "respawnLastCP":
+                _respawnLastCP.enabled= true;
+                break;
+
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.J)) 
         {
             _data.currentHealth -= 10;
             transform.position = new Vector3(GameManager.instance.lastCheckPointPos.x, GameManager.instance.lastCheckPointPos.y, 0);
         }
     }
+
+
 }

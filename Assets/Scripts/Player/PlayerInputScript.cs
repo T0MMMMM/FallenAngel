@@ -8,7 +8,7 @@ public class PlayerInputScript : MonoBehaviour
     [SerializeField]
     public PlayerManagerScript _player;
 
-    void Update()
+    public void Update()
     {   
         if (_player._data.isPaused) { return; }
         if (Input.GetKeyDown(KeyCode.Escape) && !_player._data.isPaused)

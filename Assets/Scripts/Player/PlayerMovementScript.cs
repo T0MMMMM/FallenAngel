@@ -17,7 +17,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (_player._data.isPaused)
         {   
