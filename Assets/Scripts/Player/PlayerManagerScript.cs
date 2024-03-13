@@ -106,18 +106,6 @@ public class PlayerManagerScript : MonoBehaviour
             // Change Animation
             currentState = newState;
 
-            switch (currentState)
-            {
-                case "playing":
-                    break;
-                case "respawnLastCP":
-                    _respawnLastCP.enterScript();
-                    break;
-                default:
-                    break;
-
-            }
-
         }
     }
 

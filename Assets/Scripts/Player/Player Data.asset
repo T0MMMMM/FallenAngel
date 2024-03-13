@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalGravity: {x: 0, y: -60, z: 0}
   isGrounded: 1
-  boxSizeGround: {x: 0.5, y: 0.5, z: 0.5}
-  maxDistance: 0.7
+  boxSizeGround: {x: 0.52, y: 0.29, z: 0.5}
+  maxDistance: 0.67
   layerMask:
     serializedVersion: 2
     m_Bits: 64
   isOnWall: 0
   isOnWallLeft: 0
   isOnWallRight: 0
-  boxSizeWall: {x: 0.2, y: 0.4, z: 0.2}
-  spacing: 0.5
+  boxSizeWall: {x: 0.12, y: 0.39, z: 0.2}
+  spacing: 0.41
   timeAfterJump: 0
   blockMovement: 0
   isWallJumping: 0
@@ -37,12 +37,12 @@ MonoBehaviour:
   jumpNumber: 1
   maxJumpNumber: 1
   jumpForce: 15
-  jumpTimeCounter: -0.00011779065
+  jumpTimeCounter: 0.17272231
   jumpTime: 0.2
-  isJumping: 0
+  isJumping: 1
   simpleJump: 0
   pressJump: 0
-  holdJump: 0
+  holdJump: 1
   relasedJump: 0
   pressDash: 0
   dashing: 0
@@ -52,16 +52,16 @@ MonoBehaviour:
   dashTime: 0.2
   dashPower: {x: 30, y: 20}
   dashColdown: 2
-  dashDirection: {x: 1, y: 0}
+  dashDirection: {x: -1, y: 0}
   model: {fileID: 0}
   movementSpeed: 10
-  direction: 1
-  horizontalInput: 0
+  direction: -1
+  horizontalInput: -1
   verticalInput: 0
-  canSave: 0
+  canSave: 1
   isPaused: 0
   maxHealth: 50
-  currentHealth: 50
+  currentHealth: 30
   savingText: {fileID: 0}
   pausedPanel: {fileID: 0}
   savingTimer: 5

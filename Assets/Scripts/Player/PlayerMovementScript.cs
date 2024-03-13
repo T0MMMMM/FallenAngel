@@ -71,8 +71,12 @@ public class PlayerMovementScript : MonoBehaviour
     void handleMovement()
     {
 
+        if (_player._rb.velocity.y <= -80)
+            _player._rb.velocity = new Vector3(_player._rb.velocity.x, -80, 0);
+
         if (_player._data.isGrounded)
         {
+            _player._rb.velocity = new Vector3(_player._rb.velocity.x, 0, 0);
             _player._data.jumpNumber = _player._data.maxJumpNumber;
         }
 
@@ -92,12 +96,12 @@ public class PlayerMovementScript : MonoBehaviour
         if ((_player._data.horizontalInput > 0))
         {
             _player._data.direction = 1;
-            _player._data.model.transform.eulerAngles = new Vector3(0, 180, 0);
+            _player._data.model.transform.eulerAngles = new Vector3(0, 90, 0);
         }
         else if ((_player._data.horizontalInput < 0))
         {
             _player._data.direction = -1;
-            _player._data.model.transform.eulerAngles = new Vector3(0, 0, 0);
+            _player._data.model.transform.eulerAngles = new Vector3(0, -90, 0);
         }
 
         if (!_player._data.dashing)
@@ -159,12 +163,12 @@ public class PlayerMovementScript : MonoBehaviour
             if (_player._data.isOnWallLeft && _player._data.direction == -1)
             {
                 _player._data.direction = -_player._data.direction;
-                _player._data.model.transform.eulerAngles = new Vector3(0, 180, 0);
+                _player._data.model.transform.eulerAngles = new Vector3(0, 90, 0);
             }
             else if (_player._data.isOnWallRight && _player._data.direction == 1)
             {
                 _player._data.direction = -_player._data.direction;
-                _player._data.model.transform.eulerAngles = new Vector3(0, 0, 0);
+                _player._data.model.transform.eulerAngles = new Vector3(0, -90, 0);
             }
             _player._rb.velocity = new Vector3(_player._data.direction * _player._data.wallJumpingPower.x, _player._data.wallJumpingPower.y, 0);
         }
