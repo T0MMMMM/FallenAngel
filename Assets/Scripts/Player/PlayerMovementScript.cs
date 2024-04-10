@@ -18,6 +18,7 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         _player._sound.Play("Forest");
+        _player._sound.Play("Birds");
 
     }
 
