@@ -13,10 +13,12 @@ public class PlayerData : ScriptableObject
     public LayerMask layerMask;
 
 
-    [Header("Wall Check Collision")]
+    [Header("Check Collision")]
     [HideInInspector] public bool isOnWall = false;
     [HideInInspector] public bool isOnWallLeft = false;
     [HideInInspector] public bool isOnWallRight = false;
+    [HideInInspector] public bool isSliding;
+    [HideInInspector] public bool isHanging;
     public Vector3 boxSizeWall;
     public float spacing;
 
@@ -45,6 +47,9 @@ public class PlayerData : ScriptableObject
     [HideInInspector] public bool pressJump;
     [HideInInspector] public bool holdJump;
     [HideInInspector] public bool relasedJump;
+    [HideInInspector] public bool hangJumping;
+    public float delayAfterWallJump = 0.6f;
+
 
 
     [Header("Dash")]

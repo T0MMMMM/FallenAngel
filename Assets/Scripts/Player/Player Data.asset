@@ -13,16 +13,18 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   normalGravity: {x: 0, y: -60, z: 0}
-  isGrounded: 1
-  boxSizeGround: {x: 0.52, y: 0.29, z: 0.5}
-  maxDistance: 0.67
+  isGrounded: 0
+  boxSizeGround: {x: 0.52, y: 0.4, z: 0.5}
+  maxDistance: 0.75
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  isOnWall: 0
+  isOnWall: 1
   isOnWallLeft: 0
-  isOnWallRight: 0
-  boxSizeWall: {x: 0.12, y: 0.39, z: 0.2}
+  isOnWallRight: 1
+  isSliding: 0
+  isHanging: 1
+  boxSizeWall: {x: 0.15, y: 0.05, z: 0.2}
   spacing: 0.41
   timeAfterJump: 0
   blockMovement: 0
@@ -33,35 +35,37 @@ MonoBehaviour:
   wallJumpingTime: 1
   wallJumpingCounter: 0
   wallJumpingDuration: 2
-  wallJumpingPower: {x: 12, y: 16, z: 0}
-  jumpNumber: 1
-  maxJumpNumber: 1
+  wallJumpingPower: {x: 12, y: 23, z: 0}
+  jumpNumber: 0
+  maxJumpNumber: 0
   jumpForce: 15
-  jumpTimeCounter: 0.17272231
+  jumpTimeCounter: -0.00034467503
   jumpTime: 0.2
-  isJumping: 1
+  isJumping: 0
   simpleJump: 0
   pressJump: 0
-  holdJump: 1
+  holdJump: 0
   relasedJump: 0
+  hangJumping: 0
+  delayAfterWallJump: 0.6
   pressDash: 0
   dashing: 0
-  dashUnlock: 1
+  dashUnlock: 0
   canDash: 1
   endDashColdown: 0
   dashTime: 0.2
   dashPower: {x: 30, y: 20}
   dashColdown: 2
-  dashDirection: {x: -1, y: 0}
+  dashDirection: {x: 1, y: 0}
   model: {fileID: 0}
   movementSpeed: 10
-  direction: -1
-  horizontalInput: -1
+  direction: 1
+  horizontalInput: 0
   verticalInput: 0
-  canSave: 1
+  canSave: 0
   isPaused: 0
   maxHealth: 50
-  currentHealth: 30
+  currentHealth: 50
   savingText: {fileID: 0}
   pausedPanel: {fileID: 0}
   savingTimer: 5

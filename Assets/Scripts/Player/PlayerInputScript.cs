@@ -28,18 +28,15 @@ public class PlayerInputScript : MonoBehaviour
 
         _player._data.pressWallJump = Input.GetKeyDown(KeyCode.Space) && _player._data.isOnWall && !_player._data.isGrounded;
 
-        _player._data.simpleJump = _player._data.pressJump && (_player._data.isGrounded || (_player._data.jumpNumber >= 1 && !_player._data.isOnWall));
-
+        _player._data.simpleJump = _player._data.pressJump && (_player._data.isGrounded || (_player._data.jumpNumber >= 1 && !_player._data.isOnWall) && (_player._data.timeAfterJump == 0 || _player._data.timeAfterJump >= _player._data.delayAfterWallJump));
+        _player._data.hangJumping = _player._data.pressJump && _player._data.isHanging;
 
         _player._data.pressDash = _player._data.canDash && Input.GetButtonDown("Dash");
 
-        _player._data.blockMovement = (Input.GetKeyDown(KeyCode.Space) && _player._data.isOnWall || (_player._data.timeAfterJump < 0.4 && _player._data.timeAfterJump != 0 && _player._data.isWallJumping)) ;
+        _player._data.blockMovement = (Input.GetKeyDown(KeyCode.Space) && _player._data.isOnWall || (_player._data.timeAfterJump < _player._data.delayAfterWallJump && _player._data.timeAfterJump != 0 && _player._data.isWallJumping)) ;
 
         _player._data.horizontalInput = Input.GetAxisRaw("Horizontal");
         _player._data.verticalInput = Input.GetAxisRaw("Vertical");
-
-
-
 
     }
 }

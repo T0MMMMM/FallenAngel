@@ -69,6 +69,7 @@ public class PlayerManagerScript : MonoBehaviour
         _data.pausedPanel.SetActive(false);
         _data.savingAnimation = GameObject.FindGameObjectWithTag("savingAnimation").GetComponent<Animator>();
 
+
         _data.dashUnlock = false;
         _data.jumpNumber = 0;
         _data.maxJumpNumber = 0;
@@ -76,6 +77,7 @@ public class PlayerManagerScript : MonoBehaviour
         _data.jumpTimeCounter = 5f;
         _data.isPaused = false;
         _data.canDash = true;
+        _data.delayAfterWallJump = 0.6f;
 
         _data.currentHealth = 50; // SaveManager.instance.maxHealth;
         _data.maxHealth = 50; //SaveManager.instance.maxHealth;

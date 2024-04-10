@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\IL3DN\Scripts\Editor\IL3DN_Wind_Editor.cs" />
-    <Compile Include="Assets\Scripts\Editor\Object2Terrain.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
