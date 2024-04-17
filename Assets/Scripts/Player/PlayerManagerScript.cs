@@ -25,12 +25,9 @@ public class PlayerManagerScript : MonoBehaviour
     public RespawnLastCP _respawnLastCP;
 
 
-
     [SerializeField]
     public PlayerData _data;
 
-    [SerializeField]
-    public AudioManager _sound;
 
 
     #region player

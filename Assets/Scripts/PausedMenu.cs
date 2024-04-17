@@ -18,18 +18,18 @@ public class PausedMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             _player._data.isPaused = false;
-            Time.timeScale = 1;
             PausedPanel.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 
-    public void Continue() {
+    public void stopPause() {
         _player._data.isPaused = false;
         PausedPanel.SetActive(false);
         Time.timeScale = 1;
     }
 
-    public void Quit() {
+    public void quit() {
         Application.Quit();
     }
 

@@ -11,11 +11,11 @@ public class PlayerInputScript : MonoBehaviour
     public void Update()
     {   
         if (_player._data.isPaused) { return; }
-        if (Input.GetKeyDown(KeyCode.Escape) && !_player._data.isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape)) // && !_player._data.isPaused
         {
             _player._data.isPaused = true;
-            _player._data.pausedPanel.SetActive(true);
             Time.timeScale = 0;
+            _player._data.pausedPanel.SetActive(true);
         }
 
         _player._data.pressJump = Input.GetKeyDown(KeyCode.Space);

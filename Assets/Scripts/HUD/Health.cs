@@ -27,8 +27,6 @@ public class Health : MonoBehaviour
     {   
         image.sprite = sprites[5 - (int) _player._data.currentHealth/10];
         //Debug.Log(_player._data.currentHealth);
-
-
     }
 
 }

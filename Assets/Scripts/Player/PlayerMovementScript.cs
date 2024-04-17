@@ -14,13 +14,7 @@ public class PlayerMovementScript : MonoBehaviour
     private bool endSlide = false;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        _player._sound.Play("Forest");
-        _player._sound.Play("Birds");
-
-    }
+   
 
     // Update is called once per frame
     public void Update()
@@ -336,7 +330,6 @@ public class PlayerMovementScript : MonoBehaviour
         _player._data.isWallJumping = false;
         _player._rb.velocity = new Vector3(0f, 0f, 0f);
         _player._data.timeAfterJump = 0;
-        _player._sound.Play("Dash Cartoon");
 
 
         while (Time.time < startTime + _player._data.dashTime && _player._data.canDash)
@@ -358,7 +351,6 @@ public class PlayerMovementScript : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + _player._data.dashColdown)
         {
-            Debug.Log(Time.time - startTime);
             yield return null;
         }
         _player._data.endDashColdown = true;
