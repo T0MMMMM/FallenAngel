@@ -42,10 +42,6 @@ public class PlayerMovementScript : MonoBehaviour
 
         handleJump();
 
-        if (_player._data.canSave)
-        {
-            handleSave();
-        }
     }
 
 
@@ -74,7 +70,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (_player._data.isOnWall && _player._rb.velocity.y < 0)
         {
-            _player._rb.velocity = new Vector3(_player._rb.velocity.x, -3, _player._rb.velocity.z);
+            _player._rb.velocity = new Vector3(_player._rb.velocity.x, -5, _player._rb.velocity.z);
         }
 
         #endregion 
@@ -120,7 +116,7 @@ public class PlayerMovementScript : MonoBehaviour
             _player._data.model.transform.eulerAngles = new Vector3(0, -90, 0);
         }
 
-        if (!_player._data.dashing)
+        if (!_player._data.dashing) 
         {
             if (_player._data.horizontalInput == 0 && _player._data.verticalInput == 0)
             {
@@ -318,7 +314,7 @@ public class PlayerMovementScript : MonoBehaviour
             Gizmos.DrawCube(transform.position + new Vector3(0, 0.7f, 0) + transform.right * _player._data.spacing, _player._data.boxSizeWall * 2);
         }
 
-        if (Physics.BoxCast(transform.position + new Vector3(0, 1f, 0), _player._data.boxSizeWall, _player._data.model.transform.forward, transform.rotation, _player._data.spacing, _player._data.layerMask))
+        if (_player._data.isHanging)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawCube(transform.position + new Vector3(0, 1f, 0) + _player._data.model.transform.forward * _player._data.spacing, _player._data.boxSizeWall * 2);
@@ -330,45 +326,7 @@ public class PlayerMovementScript : MonoBehaviour
             Gizmos.DrawCube(transform.position + new Vector3(0, 1f, 0) + _player._data.model.transform.forward * _player._data.spacing, _player._data.boxSizeWall * 2);
         }
 
-
-
-
     }
-
-    private void handleSave()
-    {
-        SaveManager.instance.position_x = _player._rb.position.x;
-        SaveManager.instance.position_y = _player._rb.position.y;
-        SaveManager.instance.maxHealth = _player._data.maxHealth;
-
-
-
-        if (_player._data.pressSave && !_player._data.savingAnimation.GetBool("isSaving"))
-        {
-            _player._data.savingAnimation.SetBool("isSaving", true);
-        }
-        if (_player._data.holdSave || (_player._data.savingTimer < 2 && _player._data.savingTimer > 0))
-        {
-            _player._data.savingTimer -= Time.deltaTime;
-        }
-        if (_player._data.savingTimer < 2)
-        {
-            SaveManager.instance.Save();
-        }
-        if (_player._data.savingTimer <= 0)
-        {
-            _player._data.savingTimer = 5;
-            _player._data.canSave = false;
-            _player._data.savingAnimation.SetBool("isSaving", false);
-        }
-
-        if (_player._data.relasedSave && !(_player._data.savingTimer < 2))
-        {
-            _player._data.savingAnimation.SetBool("isSaving", false);
-            _player._data.savingTimer = 5;
-        }
-    }
-
 
     private IEnumerator Dash()
     {
@@ -397,12 +355,11 @@ public class PlayerMovementScript : MonoBehaviour
 
     private IEnumerator DashColdown()
     {
-        while (_player._data.dashColdown > 0)
+        float startTime = Time.time;
+        while (Time.time < startTime + _player._data.dashColdown)
         {
-            _player._data.dashColdown -= Time.deltaTime;
+            Debug.Log(Time.time - startTime);
             yield return null;
-
-
         }
         _player._data.endDashColdown = true;
     }
@@ -416,7 +373,6 @@ public class PlayerMovementScript : MonoBehaviour
         if (_player._data.endDashColdown && _player._data.isGrounded)
         {
             _player._data.canDash = true;
-            _player._data.dashColdown = 2f;
             _player._data.endDashColdown = false;
 
         }

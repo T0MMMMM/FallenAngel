@@ -20,19 +20,23 @@ public class PlayerCollisionScript : MonoBehaviour
             _player._data.dashUnlock = true;
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Respawn"))
-        {
-            _player._data.canSave = true;
-            _player._data.savingText.SetActive(true);
-        }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Respawn"))
+    }
+
+    public void hit(int damage)
+    {
+        _player._data.currentHealth -= damage;
+        if (_player._data.currentHealth <= 0)
         {
-            _player._data.canSave = false;
-            _player._data.savingText.SetActive(false);
+            _player._data.currentHealth = 50; //_player.starting();
+            _player._rb.position = new Vector3(SaveManager.instance.position_x, SaveManager.instance.position_y, 0);
+        } else
+        {
+            _player.transform.position = new Vector3(GameManager.instance.lastCheckPointPos.x, GameManager.instance.lastCheckPointPos.y, 0);
         }
     }
+
 }

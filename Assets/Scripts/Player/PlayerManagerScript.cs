@@ -64,11 +64,15 @@ public class PlayerManagerScript : MonoBehaviour
         _rb.position = new Vector3(SaveManager.instance.position_x, SaveManager.instance.position_y, 0);
         Physics.gravity = _data.normalGravity;
         _data.model = GameObject.FindGameObjectWithTag("model");
-        _data.savingText = GameObject.FindGameObjectsWithTag("savingText")[0]; 
         _data.pausedPanel = GameObject.FindGameObjectWithTag("pausedMenu");
         _data.pausedPanel.SetActive(false);
-        _data.savingAnimation = GameObject.FindGameObjectWithTag("savingAnimation").GetComponent<Animator>();
 
+        spawn();
+
+    }
+
+    public void spawn()
+    {
 
         _data.dashUnlock = false;
         _data.jumpNumber = 0;
@@ -78,13 +82,13 @@ public class PlayerManagerScript : MonoBehaviour
         _data.isPaused = false;
         _data.canDash = true;
         _data.delayAfterWallJump = 0.6f;
+        _data.dashColdown = 0.5f;
+        _data.dashPower = new Vector3(30f, 30f, 0f);
 
         _data.currentHealth = 50; // SaveManager.instance.maxHealth;
         _data.maxHealth = 50; //SaveManager.instance.maxHealth;
 
         ChangeState("playing");
-
-
     }
 
     public void ChangeState(string newState)
@@ -130,7 +134,7 @@ public class PlayerManagerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J)) 
         {
-            _data.currentHealth -= 10;
+            _collisionScript.hit(10);
             transform.position = new Vector3(GameManager.instance.lastCheckPointPos.x, GameManager.instance.lastCheckPointPos.y, 0);
         }
     }

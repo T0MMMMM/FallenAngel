@@ -60,8 +60,8 @@ public class PlayerData : ScriptableObject
     [HideInInspector] public bool endDashColdown = true;
 
     public float dashTime = 0.2f;
-    public Vector2 dashPower = new Vector2(30f, 20f);
-    public float dashColdown = 2f;
+    public Vector2 dashPower = new Vector2(30f, 30f);
+    public float dashColdown = 1f;
     public Vector2 dashDirection = new Vector2(0f, 0f);
 
 
@@ -83,15 +83,9 @@ public class PlayerData : ScriptableObject
 
 
     [Header("Save")]
-    public GameObject savingText;
     public GameObject pausedPanel;
-    public float savingTimer = 5f;
-    [HideInInspector] public bool pressSave = false;
-    [HideInInspector] public bool holdSave = false;
-    [HideInInspector] public bool relasedSave = false;
     
 
-    [Header("Animation")]
-    public Animator savingAnimation;
+    //[Header("Animation")]
     //public Animator _anim;
 }
