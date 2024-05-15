@@ -10,15 +10,17 @@ public class PlayerCollisionScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Double Jump Power")
+        if (other.name == "Double Jump Power" && other.transform.GetChild(1).gameObject != null)
         {
+            other.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
            _player._data.maxJumpNumber += 1;
-            Destroy(other.gameObject);
+            Destroy(other.transform.GetChild(1).gameObject);
         }
-        if (other.name == "Dash Power")
+        if (other.name == "Dash Power" && other.transform.GetChild(1).gameObject != null)
         {
+            other.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
             _player._data.dashUnlock = true;
-            Destroy(other.gameObject);
+            Destroy(other.transform.GetChild(1).gameObject);
         }
     }
 
