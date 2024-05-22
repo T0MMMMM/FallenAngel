@@ -93,7 +93,7 @@ Material:
     - _ExcludeFromTUAndAA: 0
     - _MaxXPos: 2.13
     - _MaxYPos: 1.88
-    - _MinXPos: -15.9
+    - _MinXPos: -44.4
     - _MinYPos: -0.12
     - _OpaqueCullMode: 2
     - _QueueControl: 0
@@ -126,7 +126,7 @@ Material:
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
     - _WindOffset: 0
-    - _WindSpeed: 1.2
+    - _WindSpeed: 1.6
     - _WindStregth: 0.2
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4

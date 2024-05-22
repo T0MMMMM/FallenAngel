@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bark
-    second: {fileID: 2100000, guid: 3b2a667535de48c47b0e1f2e5f5aa3dc, type: 2}
+    second: {fileID: 2100000, guid: 2f8088a4170cca64fbbfac095b9978e7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Leaf
-    second: {fileID: 2100000, guid: 2ddc2e0151540994b81f871b7e989cda, type: 2}
+    second: {fileID: 2100000, guid: 2f8088a4170cca64fbbfac095b9978e7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
