@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.8820755, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.23399262, b: 0.0990566, a: 1}
   maxFogDistance:
     m_OverrideState: 0
     m_Value: 5000
@@ -48,19 +48,19 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 90
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.56573784, b: 0.36320752, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
   depthExtent:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 53.85
   denoisingMode:
     m_OverrideState: 1
     m_Value: 2
@@ -133,6 +133,9 @@ MonoBehaviour:
     m_Value:
       serializedVersion: 2
       m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
   occluderMotionRejection:
     m_OverrideState: 0
     m_Value: 1
@@ -192,8 +195,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.6039216, b: 0.44705883, a: 1}
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -232,14 +235,14 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 12
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.972549, b: 0.96862745, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 38
+    m_Value: 16
 --- !u!114 &-1744836611984683263
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -255,7 +258,7 @@ MonoBehaviour:
   active: 1
   skyType:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1
   cloudType:
     m_OverrideState: 1
     m_Value: 1
@@ -283,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81bcacc415a1f743bfdf703afc52027, type: 3}
   m_Name: GradientSky
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   rotation:
     m_OverrideState: 0
     m_Value: 0
@@ -348,6 +351,7 @@ MonoBehaviour:
   - {fileID: -2347256823519001648}
   - {fileID: -4211549646651885480}
   - {fileID: 2710844372917806582}
+  - {fileID: 3195636922273262945}
 --- !u!114 &100775475047133704
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -401,6 +405,9 @@ MonoBehaviour:
     opacityA:
       m_OverrideState: 0
       m_Value: 0
+    altitude:
+      m_OverrideState: 0
+      m_Value: 2000
     rotation:
       m_OverrideState: 0
       m_Value: 0
@@ -439,6 +446,9 @@ MonoBehaviour:
     thickness:
       m_OverrideState: 1
       m_Value: 0
+    ambientProbeDimmer:
+      m_OverrideState: 0
+      m_Value: 1
     castShadows:
       m_OverrideState: 0
       m_Value: 0
@@ -458,6 +468,9 @@ MonoBehaviour:
     opacityA:
       m_OverrideState: 0
       m_Value: 0
+    altitude:
+      m_OverrideState: 0
+      m_Value: 2000
     rotation:
       m_OverrideState: 0
       m_Value: 0
@@ -496,6 +509,9 @@ MonoBehaviour:
     thickness:
       m_OverrideState: 0
       m_Value: 0.5
+    ambientProbeDimmer:
+      m_OverrideState: 0
+      m_Value: 1
     castShadows:
       m_OverrideState: 0
       m_Value: 0
@@ -539,6 +555,127 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &3195636922273262945
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: HDRISky
+  m_EditorClassIdentifier: 
+  active: 1
+  rotation:
+    m_OverrideState: 1
+    m_Value: 0
+  skyIntensityMode:
+    m_OverrideState: 1
+    m_Value: 0
+  exposure:
+    m_OverrideState: 1
+    m_Value: 14.7
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  upperHemisphereLuxValue:
+    m_OverrideState: 1
+    m_Value: 1.403564
+  upperHemisphereLuxColor:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.31898123, z: 0.30489877}
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 1
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 1
+    m_Value: {fileID: 8900000, guid: 896b9da9b4029944fb571a2313d94de7, type: 2}
+  distortionMode:
+    m_OverrideState: 1
+    m_Value: 0
+  flowmap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  upperHemisphereOnly:
+    m_OverrideState: 0
+    m_Value: 1
+  scrollOrientation:
+    m_OverrideState: 0
+    m_Value:
+      mode: 1
+      customValue: 0
+      additiveValue: 0
+      multiplyValue: 1
+  scrollSpeed:
+    m_OverrideState: 0
+    m_Value:
+      mode: 1
+      customValue: 100
+      additiveValue: 0
+      multiplyValue: 1
+  enableBackplate:
+    m_OverrideState: 0
+    m_Value: 0
+  backplateType:
+    m_OverrideState: 0
+    m_Value: 0
+  groundLevel:
+    m_OverrideState: 0
+    m_Value: 0
+  scale:
+    m_OverrideState: 0
+    m_Value: {x: 32, y: 32}
+  projectionDistance:
+    m_OverrideState: 0
+    m_Value: 16
+  plateRotation:
+    m_OverrideState: 0
+    m_Value: 0
+  plateTexRotation:
+    m_OverrideState: 0
+    m_Value: 0
+  plateTexOffset:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  blendAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  shadowTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pointLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  dirLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  rectLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  m_SkyVersion: 1
+  enableDistortion:
+    m_OverrideState: 0
+    m_Value: 0
+  procedural:
+    m_OverrideState: 0
+    m_Value: 1
+  scrollDirection:
+    m_OverrideState: 0
+    m_Value: 0
+  m_ObsoleteScrollSpeed:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &4333771548662868328
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -551,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
   m_Name: Exposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 0
