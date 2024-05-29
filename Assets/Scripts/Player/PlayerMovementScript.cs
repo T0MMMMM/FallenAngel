@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.Burst.CompilerServices;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovementScript : MonoBehaviour
@@ -12,9 +13,13 @@ public class PlayerMovementScript : MonoBehaviour
 
     private Vector3 slide = new Vector3(0,0,0);
     private bool endSlide = false;
+    public Animator animator;
 
+    private void Start()
+    {
+        animator = animator.GetComponent<Animator>();
+    }
 
-   
 
     // Update is called once per frame
     public void Update()
@@ -75,6 +80,16 @@ public class PlayerMovementScript : MonoBehaviour
     void handleMovement()
     {
 
+        if (_player._data.horizontalInput != 0)
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+        }
+
+
         if (_player._rb.velocity.y <= -50)
             _player._rb.velocity = new Vector3(_player._rb.velocity.x, -50, 0);
 
@@ -121,6 +136,7 @@ public class PlayerMovementScript : MonoBehaviour
                 _player._data.dashDirection = new Vector2(_player._data.horizontalInput, _player._data.verticalInput);
             }
         }
+
     }
 
 
