@@ -91,9 +91,9 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
-    - _MaxXPos: 2.13
+    - _MaxXPos: 41.93
     - _MaxYPos: 1.88
-    - _MinXPos: -44.4
+    - _MinXPos: -47.2
     - _MinYPos: -0.12
     - _OpaqueCullMode: 2
     - _QueueControl: 0
