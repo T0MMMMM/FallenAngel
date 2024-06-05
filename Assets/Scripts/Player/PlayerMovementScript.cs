@@ -97,6 +97,11 @@ public class PlayerMovementScript : MonoBehaviour
         {
             //_player._rb.velocity = new Vector3(_player._rb.velocity.x, 0, 0);
             _player._data.jumpNumber = _player._data.maxJumpNumber;
+            animator.SetBool("IsJumping", false);
+        }
+        else
+        {
+            animator.SetBool("IsJumping", true);
         }
 
 

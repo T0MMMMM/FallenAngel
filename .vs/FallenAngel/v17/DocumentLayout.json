@@ -1,57 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\",
+  "WorkspaceRootPath": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\player\\playercollisionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercollisionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\player\\playermovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|c:\\users\\hakri\\documents\\fallen angel\\fallen angel\\fallenangel\\assets\\scripts\\player\\playermovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovementscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|d:\\users\\apfeillefort\\desktop\\fallenangel\\assets\\scripts\\savezone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\player\\playercollisionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercollisionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\savezone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savezone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|d:\\users\\apfeillefort\\desktop\\fallenangel\\assets\\scripts\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\player\\playerinputscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\player\\playerinputscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinputscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|d:\\users\\apfeillefort\\desktop\\fallenangel\\assets\\scripts\\pausedmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\pausedmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pausedmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\assets\\textmesh pro\\shaders\\tmp_sdf.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\assets\\textmesh pro\\shaders\\tmp_sdf.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\textmesh pro\\shaders\\tmp_sdf.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\player\\playermanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\player\\playermanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\respawnlastcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\respawnlastcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\respawnlastcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\assets\\scripts\\spikescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\assets\\scripts\\spikescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5985FB8F-0672-CE16-D047-8B47BB57173F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spikescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -62,15 +62,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "SpikeScript.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SpikeScript.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SpikeScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpikeScript.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SpikeScript.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SpikeScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\SpikeScript.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -79,62 +79,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SaveZone.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SaveZone.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveZone.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SaveZone.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SaveZone.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwEcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T13:00:21.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SaveManager.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SaveManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveManager.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\SaveManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SaveManager.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T13:00:01.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PausedMenu.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\PausedMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PausedMenu.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\PausedMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PausedMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T08:39:41.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TMP_SDF.shader",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
-              "RelativeDocumentMoniker": "Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
-              "RelativeToolTip": "Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
-              "ViewState": "AQIAAOoAAAAAAAAAAIBJwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2024-04-24T08:09:07.691Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "PlayerData.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerData.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerData.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerData.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerData.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerData.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -144,9 +93,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "RespawnLastCP.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\RespawnLastCP.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\RespawnLastCP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RespawnLastCP.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\RespawnLastCP.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\RespawnLastCP.cs",
               "RelativeToolTip": "Assets\\Scripts\\RespawnLastCP.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -156,22 +105,21 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "PlayerInputScript.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerInputScript.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerInputScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerInputScript.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerInputScript.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerInputScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInputScript.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T09:32:35.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-06T09:32:35.52Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -181,9 +129,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Checkpoint.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Checkpoint.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Checkpoint.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Checkpoint.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Checkpoint.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Checkpoint.cs",
               "RelativeToolTip": "Assets\\Scripts\\Checkpoint.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -193,9 +141,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "PlayerManagerScript.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerManagerScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerManagerScript.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerManagerScript.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerManagerScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerManagerScript.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAowE8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -203,29 +151,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayerMovementScript.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerMovementScript.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerMovementScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovementScript.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerMovementScript.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerMovementScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovementScript.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwCMAAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAwFkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-28T13:16:21.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "TMP_SDF.shader",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
+              "RelativeDocumentMoniker": "Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
+              "RelativeToolTip": "Assets\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF.shader",
+              "ViewState": "AQIAAOoAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-04-24T08:09:07.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PausedMenu.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\PausedMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PausedMenu.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\PausedMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PausedMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T08:39:41.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveManager.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveManager.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T13:00:01.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaveZone.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SaveZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveZone.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\SaveZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveZone.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwEcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T13:00:21.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerCollisionScript.cs",
-              "DocumentMoniker": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
+              "DocumentMoniker": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
-              "ToolTip": "D:\\Users\\APFEILLEFORT\\Desktop\\FallenAngel\\Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
+              "ToolTip": "C:\\Users\\hakri\\Documents\\Fallen Angel\\Fallen Angel\\FallenAngel\\Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerCollisionScript.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T13:16:16.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T13:16:16.122Z"
             }
           ]
         }
